@@ -16,21 +16,20 @@
       font-family: Arial, sans-serif;
     }
 
-   .love-timer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-   .years,
-   .months,
-   .days,
-   .hours {
+  .love-timer {
       display: flex;
       align-items: center;
     }
 
-   .digit {
+  .years,
+  .months,
+  .days,
+  .hours {
+      display: flex;
+      align-items: center;
+    }
+
+  .digit {
       width: 50px;
       height: 50px;
       background-color: pink;
@@ -42,7 +41,7 @@
       margin: 5px;
     }
 
-   .separator {
+  .separator {
       font-size: 36px;
       margin: 5px;
     }
@@ -56,16 +55,19 @@
       <div class="separator">年</div>
       <div class="digit" id="yearDigit2">0</div>
     </div>
+    <span> </span>
     <div class="months">
       <div class="digit" id="monthDigit1">0</div>
       <div class="separator">月</div>
       <div class="digit" id="monthDigit2">0</div>
     </div>
+    <span> </span>
     <div class="days">
       <div class="digit" id="dayDigit1">0</div>
       <div class="separator">日</div>
       <div class="digit" id="dayDigit2">0</div>
     </div>
+    <span> </span>
     <div class="hours">
       <div class="digit" id="hourDigit1">0</div>
       <div class="separator">:</div>
