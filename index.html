@@ -25,10 +25,10 @@
       text-align: center;
     }
 
-   .fa-snowflake {
+  .fa-snowflake {
       color: #fff;
       position: absolute;
-      top: -25px;
+      top: -20px;
       animation: fall linear forwards;
     }
 
@@ -38,30 +38,34 @@
       }
     }
 
-   .countdown-container {
+  .countdown-container {
       display: flex;
     }
 
-   .time {
+  .time {
       display: flex;
-      font-size: 2em;
+      font-size: 1.5em;
       flex-direction: column;
-      margin: 0 15px;
+      margin: 0 20px;
     }
 
-   .time h1 {
+  .time h1 {
       margin-bottom: 0;
     }
 
-   .time small {
+  .time small {
       color: #ccc;
+    }
+    /* 添加以下样式规则来修改特定的 h1 元素字号 */
+    h1#your-specific-id {
+      font-size: 40px;
     }
   </style>
 </head>
 
 <body>
-  <h1>HYB & BWL</h1>
-  <p style="font-size:17px;">总有些惊奇的际遇，比方说当我遇见你。</p>
+  <h1 id="your-specific-id">HYB & BWL</h1>
+  <p style="font-size:18px;">总有些惊奇的际遇，比方说当我遇见你。</p>
   <div class="countdown-container">
     <div class="time">
       <h1 id="days">00</h1>
@@ -82,7 +86,7 @@
   </div>
 
   <script>
-    const startTime = new Date("May 26 2024 00:00:00");
+    const startTime = new Date("May 28 2024 00:00:00");
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
     const minutesEl = document.getElementById("minutes");
