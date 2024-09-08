@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="icon" href="./favicon.ico">
+    <title>hyb&bwl</title>
+    <meta name="description" content="你的描述">
+    <meta name="keywords" content="lm">
+    <link rel="stylesheet" type="text/css" href="./css/love.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" type="text/css" href="./css/FiraCode.css">
+</head>
+
+    <!-- 分页1 -->
+    <div class="page page1">
+        <div class="swiper-container swiper-container-love1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="page1-love1">
+						<!-- 在下面两个链接里的“12345678”换成自己的QQ号就行 -->
+                        <img src="https://q1.qlogo.cn/g?b=qq&nk=1553910207&s=640" alt="zlh">
+                         <img src="./images/cat.gif" alt="cat">
+                        <img src="https://q1.qlogo.cn/g?b=qq&nk=3359920753&s=640" alt="wjy">
+                        <br><br><br>
+                        <p>总有些惊奇的际遇，比方说当我遇见你</p>
+                        <br>
+                        <p>我们已经在一起： </p><br>
+						<!-- 时间请前往lovetime.js修改 -->
+						<p id="lovetime"></p>
+                        <!-- 
+                        <p>不知道送什么给你</p>
+                        <p>那就送一个网站吧~</p>
+                        <span class="right">往右划动 →</span> -->
+                    </div>
+            
+                    </div>
+                </div>
+                <!--<div class="swiper-slide">
+                    <div class="page1-love1">
+                        <img class="cat" src="./images/cat3.gif" alt="cat3">
+                        <p class="catText">抱死你 ↑</p>
+                        <p>这次我<b>超级超级超级超级</b></p>
+                        <p>认真的写了一遍</p>
+                        <p style="font-size: 13px;">以 框架构造、
+                            <span style="color: red; font-size: 16px;">爱你</span>、
+                            视觉体验、响应式 为核心制作
+                        </p>
+                        <span class="right">再划一次吧 →</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page1-love1">
+                        <img class="cat" src="./images/cat4.gif" alt="cat4">
+                        <p class="catText">拍你猪头 ↑</p>
+                        <p>这次应该不会太难看了吧</p>
+                        <p>希望你喜欢呀</p>
+                        <p>爱你哟(๑′ᴗ‵๑)</p>
+                        <b>我的<span style="color: pink;">猪</span></b>
+                    </div>
+                </div> -->
+            </div>
+            <div class="swiper-pagination swiper-pagination-love1"></div>
+        </div>
+    </div>
+
+    <!-- 分页2 - 画展 -->
+    <div class="page page2">
+        <div class="swiper-container swiper-container-love2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="page2-box">
+                        <img src="./images/drawings/1.jpg" alt="drawing1">
+                       <!--  <p><b>Your words here</b></p>-->
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page2-box">
+                        <img src="./images/drawings/2.jpg" alt="drawing2">
+                        <!--  <p><b>Your words here</b></p>-->
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page2-box">
+                        <img src="./images/drawings/3.jpg" alt="drawing3">
+                        <!--  <p><b>Your words here</b></p>-->
+                 </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="page2-box">
+                        <img src="./images/drawings/4.jpg" alt="drawing4">
+                        <!--  <p><b>Your words here</b></p>-->
+                    </div>
+                </div>
+				<div class="swiper-slide">
+                    <div class="page2-box">
+                        <img src="./images/drawings/5.jpg" alt="drawing5">
+                        <!--  <p><b>Your words here</b></p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-love2"></div>
+        </div>
+    </div>
+
+   
+
+    <!-- 侧边移动的猪猪 位置未细调，请前往love.css调整 -->
+   
+	<div class="IsPig">
+       <!--  <img src="./images/pig1.gif" alt="pig1" class="pig1">-->
+        <img src="./images/pig2.gif" alt="pig2" class="pig2"> 
+    </div> 
+
+	
+   <!-- js加载 -->
+    <script src="https://cdn.bootcss.com/wow/1.1.2/wow.js"></script>
+    <script src="./js/typeit.min.js"></script>
+    <script src="./js/swiper-3.4.2.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+
+    <script src="./js/lovetime.js"></script>
+    <script src="./js/talk.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/su.js"></script>
+    <script>
+        (function () {
+            new WOW().init()
+        })()
+    </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('body').wpSuperSnow({
+                flakes: ['./images/004.png', './images/003.png', './images/002.png',
+                    './images/001.png'
+                ],
+                totalFlakes: '100',
+                zIndex: '999999',
+                maxSize: '30',
+                maxDuration: '20',
+                useFlakeTrans: false
+            });
+        });
+    </script>
+	
+	<!-- BGM，音频文件与.html文件同目录 -->
+<!--<audio autoplay="autoplay">
+<center><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="0" height="0" src="520.mp3"></iframe></p></center></audio>
+-->
+</body>
+
+</html>
