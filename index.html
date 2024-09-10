@@ -40,7 +40,16 @@
       border-right: 25px solid transparent;
       border-bottom: 50px solid pink;
       animation: rotateTriangle 5s linear infinite; /* 增加动画时长到 5 秒，调慢旋转速度 */
+     position: relative;
     }
+
+ #triangle::before {
+     content: "小宇";
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, 50%);
+   }
 
     @keyframes rotateTriangle {
       from {
@@ -273,7 +282,7 @@
     async function handleAutoPlay() {
       const canPlayAutomatically = await canAutoplay();
       if (!canPlayAutomatically) {
-        triangle.textContent = '小宇';
+        triangle.textContent = ' ';
         triangle.style.fontSize = '12px';
       }
     }
