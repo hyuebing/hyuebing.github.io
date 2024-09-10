@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="./css/lovexhj.css">
     <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" type="text/css" href="./css/FiraCode.css">
-     <style>
-    /* 隐藏默认音频播放器样式 */
+
+    <style>
+    /* 隐藏音频默认控件 */
     audio::-internal-media-controls-download-button {
       display: none;
     }
@@ -21,11 +22,12 @@
     }
 
     audio::-webkit-media-controls-panel {
+      width: calc(100vw - 200px);
       background-color: transparent;
-      width: fit-content;
     }
 
-    #heartPlayerContainer {
+    /* 设置播放器容器样式 */
+   .player-container {
       position: fixed;
       top: 50%;
       left: 90%;
@@ -33,33 +35,31 @@
       z-index: 9999;
     }
 
-    #triangle {
-      width: 0;
-      height: 0;
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-      border-bottom: 50px solid pink;
-      animation: rotateTriangle 5s linear infinite; /* 增加动画时长到 5 秒，调慢旋转速度 */
-     position: relative;
+    /* 设置音乐图标样式 */
+   .music-icon {
+      width: 60px;
+      height: 70px;
+      background-image: url('images/music.png'); /* 这里替换为你的绝对路径 */
+      background-size: cover;
+      cursor: pointer;
     }
 
- #triangle::before {
-     content: "小宇";
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, 50%);
-   }
+    /* 播放时旋转动画 */
+   .playing {
+      animation: rotate 5s linear infinite;
+    }
 
-    @keyframes rotateTriangle {
+    @keyframes rotate {
       from {
         transform: rotate(0deg);
       }
+
       to {
         transform: rotate(360deg);
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -240,64 +240,27 @@
     </script>
 
 <!-- BGM，音频文件与.html文件同目录 -->
-
-  <audio id="myAudio" src="xiaoyu.mp3" autoplay loop>
-    Your browser does not support the audio element.
-  </audio>
-
-  <div id="heartPlayerContainer">
-    <div id="triangle"></div>
+<audio id="myAudio" src="xiaoyu.mp3" loop></audio>
+  <div class="player-container">
+    <div class="music-icon" onclick="togglePlay()"></div>
   </div>
 
   <script>
-    const audio = document.getElementById('myAudio');
-    const triangle = document.getElementById('triangle');
+    let audio = document.getElementById('myAudio');
+    let musicIcon = document.querySelector('.music-icon');
 
-    function togglePlayPause() {
+    function togglePlay() {
       if (audio.paused) {
         audio.play();
-        triangle.style.animation = 'rotateTriangle 5s linear infinite';
+        musicIcon.classList.add('playing');
       } else {
         audio.pause();
-        triangle.style.animation = 'none';
+        musicIcon.classList.remove('playing');
       }
     }
-
-    triangle.addEventListener('click', togglePlayPause);
-
-    function canAutoplay() {
-      return new Promise((resolve, reject) => {
-        const testAudio = document.createElement('audio');
-        testAudio.src = 'test.mp3';
-        testAudio.autoplay = true;
-        testAudio.onplaying = () => {
-          resolve(true);
-        };
-        testAudio.onerror = () => {
-          resolve(false);
-        };
-      });
-    }
-
-    async function handleAutoPlay() {
-      const canPlayAutomatically = await canAutoplay();
-      if (!canPlayAutomatically) {
-        triangle.textContent = ' ';
-        triangle.style.fontSize = '12px';
-      }
-    }
-
-    audio.addEventListener('play', () => {
-      triangle.textContent = '';
-      triangle.style.animation = 'rotateTriangle 5s linear infinite';
-    });
-
-    audio.addEventListener('pause', () => {
-      triangle.style.animation = 'none';
-    });
-
-    handleAutoPlay();
   </script>
+</body>
+
 
 </body>
 
