@@ -230,8 +230,9 @@
         });
     </script>
 
+<!-- BGM，音频文件与.html文件同目录 -->
 
-  <audio id="myAudio" src="xiaoyu.mp3">
+  <audio id="myAudio" src="xiaoyu.mp3" autoplay loop>
     Your browser does not support the audio element.
   </audio>
 
@@ -271,10 +272,9 @@
 
     async function handleAutoPlay() {
       const canPlayAutomatically = await canAutoplay();
-      if (canPlayAutomatically) {
-        audio.play();
-      } else {
+      if (!canPlayAutomatically) {
         triangle.textContent = '小宇';
+        triangle.style.fontSize = '12px';
       }
     }
 
@@ -289,7 +289,6 @@
 
     handleAutoPlay();
   </script>
- 
 
 </body>
 
