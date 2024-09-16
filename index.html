@@ -10,57 +10,9 @@
     <link rel="stylesheet" type="text/css" href="./css/lovexhj.css">
     <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" type="text/css" href="./css/FiraCode.css">
+       <link rel="stylesheet" href="styles/index.css" />
 
-    <style>
-    /* 隐藏音频默认控件 */
-    audio::-internal-media-controls-download-button {
-      display: none;
-    }
-
-    audio::-webkit-media-controls-enclosure {
-      overflow: hidden;
-    }
-
-    audio::-webkit-media-controls-panel {
-      width: calc(100vw - 200px);
-      background-color: transparent;
-    }
-
-    /* 设置播放器容器样式 */
-   .player-container {
-      position: fixed;
-      top: 50%;
-      left: 90%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-    }
-
-    /* 设置音乐图标样式 */
-   .music-icon {
-      width: 60px;
-      height: 70px;
-      background-image: url('images/music.png'); /* 这里替换为你的绝对路径 */
-      background-size: cover;
-      cursor: pointer;
-    }
-
-    /* 播放时旋转动画 */
-   .playing {
-      animation: rotate 5s linear infinite;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-
-</head>
+  </head>
 
 <body>
 
@@ -71,7 +23,7 @@
                 <div class="swiper-slide">
                     <div class="page1-lovexhj1">
                         <img src="https://q1.qlogo.cn/g?b=qq&nk=1553910207&s=640" alt="xhj">
-                        <img src="./images/cat7.gif" alt="cat">
+                        <img src="./images/cat7.gif" alt="cat7">
                         <img src="https://q1.qlogo.cn/g?b=qq&nk=3359920753&s=640" alt="tqy">
                         <br><br><br>
                         <p>总有些惊奇的际遇，比方说当我遇见你</p>
@@ -208,7 +160,36 @@
         <img src="./images/pig2.gif" alt="pig2" class="pig2">
     </div>
 
-    <!-- js加载 -->
+<!-- BGM，音频文件与.html文件同目录 -->
+  <div class="debut"    position=fixed>
+
+    <!-- 背景部分 -->
+    <canvas class="music-cover-background" id="background">your brower does not support canvas</canvas>
+    <!-- 前景部分 -->
+    <div class="music-cover">
+      <img src="images/xiaoyu.png" class="music-cover-image" onclick="togglePlay()"></img>
+    </div>
+  </div>
+
+  <audio id="myAudio" src="xiaoyu.mp3" loop></audio>
+
+  <script>
+    let audio = document.getElementById('myAudio');
+    let musicIcon = document.querySelector('.music-cover-image');
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        musicIcon.classList.add('playing');
+      } else {
+        audio.pause();
+        musicIcon.classList.remove('playing');
+      }
+    }
+  </script>
+</body>
+
+ <!-- js加载 -->
     <script src="https://cdn.bootcss.com/wow/1.1.2/wow.js"></script>
     <script src="./js/typeit.min.js"></script>
     <script src="./js/swiper-3.4.2.min.js"></script>
@@ -239,27 +220,9 @@
         });
     </script>
 
-<!-- BGM，音频文件与.html文件同目录 -->
-<audio id="myAudio" src="xiaoyu.mp3" loop></audio>
-  <div class="player-container">
-    <div class="music-icon" onclick="togglePlay()"></div>
-  </div>
 
-  <script>
-    let audio = document.getElementById('myAudio');
-    let musicIcon = document.querySelector('.music-icon');
-
-    function togglePlay() {
-      if (audio.paused) {
-        audio.play();
-        musicIcon.classList.add('playing');
-      } else {
-        audio.pause();
-        musicIcon.classList.remove('playing');
-      }
-    }
-  </script>
-
-</body>
+<!-- <script src="./src/CrystalWave/index.js"></script> -->
+<script src="./src/LonelyPlanet/index.js"></script>
+<!-- <script src="./src/MagicalWave/index.js"></script> -->
 
 </html>
