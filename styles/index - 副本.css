@@ -1,0 +1,86 @@
+/* body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+}*/
+
+.debut {
+     position: fixed;
+      top: 30%;
+      left: 90%;
+      z-index: 9999;
+   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* 背景部分 */
+.music-cover-background {
+  position: absolute;
+}
+
+/* 前景部分 */
+.music-cover {
+  width: 8rem;
+  height: 8rem;
+  box-sizing: border-box;
+  /* border: 0.125rem solid #B3B3B3; */
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+      cursor: pointer;
+}
+
+.music-cover-image {
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  border-radius: 50%;
+  z-index: 99999;
+      cursor: pointer;
+}
+
+ .music-cover::before {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  filter: blur(2.1rem);
+  background-image: radial-gradient(DeepSkyBlue, Cyan);
+
+} 
+
+ /*
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+} 
+*/
+
+    /* 播放时旋转动画 */
+   .playing {
+      animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
